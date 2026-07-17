@@ -2,12 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/logo-rgba.png" />
+    <link rel="apple-touch-icon" href="/logo-rgba.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>pulse</title>
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      (function() {
+        try {
+          var t = localStorage.getItem('pulse-theme');
+          if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

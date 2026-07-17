@@ -1,32 +1,29 @@
-import { Bell, Search, Settings2 } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { Menu } from 'lucide-react'
 
-export function TopBar() {
+interface TopBarProps {
+  onMenuClick?: () => void
+}
+
+export function TopBar({ onMenuClick }: TopBarProps) {
+  const today = new Date().toLocaleDateString('en-US', {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+  })
+
   return (
-    <header className="flex items-center justify-between border-b border-white/10 bg-[#0b1220]/70 px-6 py-4 backdrop-blur-xl">
-      <div>
-        <p className="text-sm text-slate-400">Today</p>
-        <h1 className="text-xl font-semibold text-white">Understanding your system</h1>
-      </div>
-
-      <div className="flex items-center gap-3">
-        <label className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/6 px-3 py-2 text-sm text-slate-400">
-          <Search size={16} />
-          <input
-            className="w-40 bg-transparent outline-none placeholder:text-slate-500"
-            placeholder="Search"
-            aria-label="Search"
-          />
-        </label>
-        <button className="rounded-2xl border border-white/10 bg-white/6 p-2.5 text-slate-300 transition hover:bg-white/10">
-          <Bell size={16} />
-        </button>
-        <Link
-          to="/settings"
-          className="rounded-2xl border border-white/10 bg-white/6 p-2.5 text-slate-300 transition hover:bg-white/10"
+    <header className="sticky top-0 z-30 flex items-center justify-between border-b border-border bg-surface/95 px-6 py-4 transition-colors duration-300 dark:border-border-dark dark:bg-surface-dark/95 lg:px-8">
+      <div className="flex items-center gap-4">
+        <button
+          onClick={onMenuClick}
+          className="rounded-xl p-2 text-text-secondary transition-colors hover:bg-surface-alt lg:hidden dark:text-text-secondary-dark dark:hover:bg-surface-alt-dark"
         >
-          <Settings2 size={16} />
-        </Link>
+          <Menu size={20} />
+        </button>
+        <div>
+          <p className="text-xs font-medium uppercase tracking-wider text-text-muted dark:text-text-muted-dark">{today}</p>
+          <h1 className="text-lg font-semibold text-text-primary dark:text-text-primary-dark">Understanding your system</h1>
+        </div>
       </div>
     </header>
   )
