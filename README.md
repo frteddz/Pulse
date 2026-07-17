@@ -1,26 +1,36 @@
 # Pulse
 
-Pulse is a cross-platform desktop system monitoring application built with **Electron**, **React**, **TypeScript**, and **Vite**. It provides real-time information about your computer's performance through a modern, responsive interface.
+Pulse is an open-source desktop system monitoring application built with Electron, React, TypeScript, and Vite. It provides real-time monitoring of system resources through a modern, responsive interface, with a focus on clarity, performance, and ease of use.
 
-> **Status:** Beta (v0.0.1)
+> **Current Version:** v0.0.1 Beta
+
+---
+
+## Overview
+
+Pulse provides a centralized dashboard for monitoring your computer's performance in real time. It combines system metrics with a rule-based health analysis engine to help users better understand the current state of their system.
+
+The project is actively under development, with additional monitoring capabilities and diagnostic tools planned for future releases.
 
 ---
 
 ## Features
 
+Current features include:
+
 - Real-time CPU monitoring
 - Memory usage monitoring
 - Disk usage monitoring
 - Network monitoring
-- System Health Score
-- Performance analysis engine
+- Overall system health score
+- Rule-based performance analysis
 - Live performance charts
 - Process viewer
-- Modern desktop UI
+- Cross-platform desktop application
 
 ---
 
-## Tech Stack
+## Technology Stack
 
 - Electron
 - React
@@ -32,31 +42,39 @@ Pulse is a cross-platform desktop system monitoring application built with **Ele
 
 ---
 
-## Project Structure
+## Installation
 
-```
-Pulse/
-├── electron/          # Electron main process
-├── public/            # Static assets
-├── src/
-│   ├── features/      # Application pages
-│   ├── shared/        # Shared components, services, types
-│   └── assets/        # Images and icons
-├── package.json
-└── electron-builder.config.json
-```
+### Download a Pre-built Release
+
+If you simply want to use Pulse, download the latest release from the Releases page:
+
+**https://github.com/frteddz/Pulse/releases/tag/v0.0.1-beta**
+
+Currently supported platforms:
+
+- Windows 10/11
+- Linux (.deb)
 
 ---
 
-## Development
+### Build from Source
 
-### Install dependencies
+Pulse is fully open source. If you would like to inspect, modify, or contribute to the project, you can build it yourself.
+
+Clone the repository:
+
+```bash
+git clone https://github.com/frteddz/Pulse.git
+cd Pulse
+```
+
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-### Start development mode
+Start the development environment:
 
 ```bash
 npm run dev
@@ -66,19 +84,19 @@ npm run dev
 
 ## Packaging
 
-### Development build
+Development build:
 
 ```bash
 npm run package:dev
 ```
 
-### Windows
+Windows installer:
 
 ```bash
 npm run package:win
 ```
 
-### Linux (.deb)
+Linux (.deb):
 
 ```bash
 npm run package:linux
@@ -86,11 +104,27 @@ npm run package:linux
 
 ---
 
-## Current Status
+## Project Structure
 
-Pulse is currently in active development.
+```
+Pulse/
+├── electron/          # Electron main process
+├── public/            # Static assets
+├── src/
+│   ├── features/      # Application pages
+│   ├── shared/        # Shared components, services, and utilities
+│   └── assets/        # Images and icons
+├── package.json
+└── electron-builder.config.json
+```
 
-Implemented:
+---
+
+## Development Status
+
+Pulse is currently in its first public beta release.
+
+Implemented components include:
 
 - Dashboard
 - Health Engine
@@ -101,25 +135,18 @@ Implemented:
 - Network Monitoring
 - Process Viewer
 
-Planned:
-
-- Startup Apps Manager
-- GPU Monitoring
-- Temperature Monitoring
-- Advanced Task Manager
-- Historical Statistics
-- Plugin Support
+The project is under active development, and additional features, optimizations, and platform improvements will continue to be added in future releases.
 
 ---
 
 ## Contributing
 
-Issues, suggestions, and pull requests are welcome.
+Contributions are welcome.
 
-If you find a bug or have a feature request, please open an Issue on GitHub.
+If you would like to improve Pulse, feel free to fork the repository, submit a pull request, or open an issue to report bugs or suggest new features.
 
 ---
 
 ## License
 
-This project is licensed under the MIT License.
+Pulse is released under the MIT License.
