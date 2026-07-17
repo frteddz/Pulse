@@ -1,32 +1,125 @@
-# React + TypeScript + Vite
+# Pulse
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Pulse is a cross-platform desktop system monitoring application built with **Electron**, **React**, **TypeScript**, and **Vite**. It provides real-time information about your computer's performance through a modern, responsive interface.
 
-Currently, two official plugins are available:
+> **Status:** Beta (v0.0.1)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Real-time CPU monitoring
+- Memory usage monitoring
+- Disk usage monitoring
+- Network monitoring
+- System Health Score
+- Performance analysis engine
+- Live performance charts
+- Process viewer
+- Modern desktop UI
 
-## Expanding the Oxlint configuration
+---
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Tech Stack
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+- Electron
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Electron Builder
+- systeminformation
+
+---
+
+## Project Structure
+
+```
+Pulse/
+├── electron/          # Electron main process
+├── public/            # Static assets
+├── src/
+│   ├── features/      # Application pages
+│   ├── shared/        # Shared components, services, types
+│   └── assets/        # Images and icons
+├── package.json
+└── electron-builder.config.json
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+---
+
+## Development
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Start development mode
+
+```bash
+npm run dev
+```
+
+---
+
+## Packaging
+
+### Development build
+
+```bash
+npm run package:dev
+```
+
+### Windows
+
+```bash
+npm run package:win
+```
+
+### Linux (.deb)
+
+```bash
+npm run package:linux
+```
+
+---
+
+## Current Status
+
+Pulse is currently in active development.
+
+Implemented:
+
+- Dashboard
+- Health Engine
+- Performance Analyzer
+- CPU Monitoring
+- Memory Monitoring
+- Disk Monitoring
+- Network Monitoring
+- Process Viewer
+
+Planned:
+
+- Startup Apps Manager
+- GPU Monitoring
+- Temperature Monitoring
+- Advanced Task Manager
+- Historical Statistics
+- Plugin Support
+
+---
+
+## Contributing
+
+Issues, suggestions, and pull requests are welcome.
+
+If you find a bug or have a feature request, please open an Issue on GitHub.
+
+---
+
+## License
+
+This project is licensed under the MIT License.
