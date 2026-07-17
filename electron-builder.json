@@ -1,14 +1,15 @@
 {
-  "appId": "com.pulse.app",
+  "appId": "com.teddz.pulse",
   "productName": "Pulse",
   "icon": "build/icon-rgba.png",
   "files": [
-    "dist/**",
-    "electron/**",
+    "dist/**/*",
+    "electron/**/*",
     "package.json"
   ],
   "directories": {
-    "buildResources": "build"
+    "buildResources": "build",
+    "output": "Beta"
   },
   "extraMetadata": {
     "main": "electron/main.cjs"
@@ -18,9 +19,8 @@
   },
   "linux": {
     "target": ["deb"],
+    "category": "Utility",
+    "syncDesktopName": true,
     "icon": "build/icon.png"
-  },
-  "mac": {
-    "target": ["dmg"]
   }
 }

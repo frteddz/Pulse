@@ -14,32 +14,14 @@
     "dev:electron": "concurrently \"vite\" \"wait-on http://127.0.0.1:5173 && electron .\"",
     "build": "tsc -b && vite build",
     "package:dev": "npm run dev:electron",
-    "package:win": "npm run build && electron-builder --win --publish never",
     "package:linux": "npm run build && electron-builder --linux --publish never",
-    "package:mac": "npm run build && electron-builder --mac --publish never",
-    "package:all": "npm run package:win && npm run package:linux && npm run package:mac",
+    "package:win": "npm run build && electron-builder --win --publish never",
+    "package:all": "npm run build && npm run package:linux && npm run package:win",
     "lint": "oxlint",
     "preview": "vite preview"
   },
   "main": "electron/main.cjs",
-  "build": {
-    "appId": "com.teddz.pulse",
-    "productName": "Pulse",
-    "files": [
-      "dist/**/*",
-      "electron/**/*",
-      "package.json"
-    ],
-    "directories": {
-      "output": "Beta"
-    },
-    "linux": {
-      "target": [
-        "deb"
-      ],
-      "category": "Utility"
-    }
-  },
+  "desktopName": "pulse",
   "dependencies": {
     "@tailwindcss/vite": "^4.3.2",
     "concurrently": "^10.0.3",
